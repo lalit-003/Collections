@@ -6,7 +6,7 @@ import org.junit.Test;
 public class TestingLinkedList {
 
 	
-	// UC1
+	// UC1 adding three integers
 	@Test
 	public void addingThreeNumbers_ShouldPassTest()
 	{

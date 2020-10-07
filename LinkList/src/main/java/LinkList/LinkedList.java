@@ -11,11 +11,11 @@ public class LinkedList<E> {
 		this.key = null;
 		this.setNext(null);
 	}
-
+//get method
 	public LinkedList getNext() {
 		return next;
 	}
-
+//set method
 	public void setNext(LinkedList next) {
 		this.next = next;
 	}
