@@ -1,7 +1,7 @@
 package LinkList;
 
 public interface ListInterface<E> {
-
+//
 	E getKey();
 
 	void setKey(E key);

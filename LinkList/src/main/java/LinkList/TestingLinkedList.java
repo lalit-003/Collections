@@ -5,9 +5,9 @@ import org.junit.Test;
 
 public class TestingLinkedList {
 
-	// UC1 adding three integers
+	// UC1 adding three integers//
 	@Test
-	public void addingThreeNumbers_ShouldPassTest() {
+	public void addingThreeNumbers_ShouldPassSimpleAdditionTest() {
 		LinkedList<Integer> firstNode = new LinkedList<>(56);
 		LinkedList<Integer> secondNode = new LinkedList<>(30);
 		LinkedList<Integer> thirdNode = new LinkedList<>(70);

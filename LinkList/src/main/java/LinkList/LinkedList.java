@@ -51,3 +51,4 @@ public class LinkedList<E> implements ListInterface<E> {
 	return nodeInString.toString();	
 	}
 }
+//
