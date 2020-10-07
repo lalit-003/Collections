@@ -6,6 +6,7 @@ import org.junit.Test;
 public class TestingLinkedList {
 
 	// UC1 adding three integers//
+	//test 1
 	@Test
 	public void addingThreeNumbers_ShouldPassSimpleAdditionTest() {
 		LinkedList firstNode = new LinkedList(56);
@@ -20,6 +21,8 @@ public class TestingLinkedList {
 
 	}
 
+	//test 2
+	//adding new element before head
 	@Test
 	public void Given3Numbers_InLinkedList_AddedToTop() {
 		LinkedList firstNode = new LinkedList(70);
@@ -40,6 +43,8 @@ public class TestingLinkedList {
 
 	}
 	
+	//test 3
+	 //adding new element after tail
 	@Test
 	public void Given3Numbers_InLinkedList_AddedTail() {
 		LinkedList firstNode = new LinkedList(56);
@@ -60,6 +65,8 @@ public class TestingLinkedList {
 
 	}
 	
+	//test 4
+	//inserting 70 between 56 and 30
 	@Test
 	public void Given3Numbers_InLinkedList_AddedInBetween() {
 		LinkedList firstNode = new LinkedList(56);
@@ -80,6 +87,8 @@ public class TestingLinkedList {
 
 	}
 	
+	//test 5
+	//deleting element at head
 	@Test
 	public void pop() {
 		LinkedList firstNode = new LinkedList(56);
@@ -100,6 +109,8 @@ public class TestingLinkedList {
 
 	}
 	
+	//test 6
+	//deleting element at tail
 	@Test
 	public void lastPop() {
 		LinkedList firstNode = new LinkedList(56);
@@ -120,7 +131,8 @@ public class TestingLinkedList {
 
 	}
 	
-	
+	//test 7
+	//searching an element by passing an object
 	@Test
 	public void SearchElement() {
 		LinkedList firstNode = new LinkedList(56);
@@ -137,6 +149,32 @@ public class TestingLinkedList {
 
 
 	}
+	
+	//test 8
+	//adding 40 after 30
+	@Test
+	public void AddingFourthNumberInBetween() {
+		LinkedList firstNode = new LinkedList(56);
+		LinkedList secondNode = new LinkedList(30);
+		LinkedList thirdNode = new LinkedList(70);
+		LinkedList fourthNode = new LinkedList(40);
+
+		List_HeadNTail Obj1 = new List_HeadNTail();
+		Obj1.add(firstNode);
+		Obj1.append(secondNode);
+        Obj1.append(thirdNode);
+		
+		Obj1.insertAfter(secondNode,fourthNode);
+
+		
+		
+		boolean result = Obj1.head.equals(firstNode) && Obj1.head.getNext().equals(secondNode) && Obj1.head.getNext().getNext().equals(fourthNode)
+				&& Obj1.tail.equals(thirdNode);
+		Assert.assertTrue(result);
+
+
+	}
+
 
 
 }
