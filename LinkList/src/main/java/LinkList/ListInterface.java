@@ -1,13 +1,13 @@
 package LinkList;
 
-public interface ListInterface<E> {
+public interface ListInterface {
 //
-	E getKey();
+	int getKey();
 
-	void setKey(E key);
+	void setKey(int key);
 
-	ListInterface<E> getNext();
+	ListInterface getNext();
 
-	void setNext(ListInterface<E> next);
+	void setNext(ListInterface next);
 
 }

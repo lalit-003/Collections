@@ -3,14 +3,14 @@ package LinkList;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class TestingLinkedList<E> {
+public class TestingLinkedList {
 
 	// UC1 adding three integers//
 	@Test
 	public void addingThreeNumbers_ShouldPassSimpleAdditionTest() {
-		LinkedList<Integer> firstNode = new LinkedList<>(56);
-		LinkedList<Integer> secondNode = new LinkedList<>(30);
-		LinkedList<Integer> thirdNode = new LinkedList<>(70);
+		LinkedList firstNode = new LinkedList(56);
+		LinkedList secondNode = new LinkedList(30);
+		LinkedList thirdNode = new LinkedList(70);
 		firstNode.setNext(secondNode);
 		secondNode.setNext(thirdNode);
 
@@ -22,16 +22,16 @@ public class TestingLinkedList<E> {
 
 	@Test
 	public void Given3Numbers_InLinkedList_AddedToTop() {
-		LinkedList<Integer> firstNode = new LinkedList<>(70);
-		LinkedList<Integer> secondNode = new LinkedList<>(30);
-		LinkedList<Integer> thirdNode = new LinkedList<>(56);
+		LinkedList firstNode = new LinkedList(70);
+		LinkedList secondNode = new LinkedList(30);
+		LinkedList thirdNode = new LinkedList(56);
 
-		List_HeadNTail<Integer> Obj1 = new List_HeadNTail<Integer>();
+		List_HeadNTail Obj1 = new List_HeadNTail();
 		Obj1.add(firstNode);
 		Obj1.add(secondNode);
 		Obj1.add(thirdNode);
 
-		System.out.println(firstNode);
+	//	System.out.println(firstNode);
 		
 		boolean result = Obj1.head.equals(thirdNode) && Obj1.head.getNext().equals(secondNode)
 				&& Obj1.tail.equals(firstNode);
@@ -42,34 +42,14 @@ public class TestingLinkedList<E> {
 	
 	@Test
 	public void Given3Numbers_InLinkedList_AddedTail() {
-		LinkedList<Integer> firstNode = new LinkedList<>(56);
-		LinkedList<Integer> secondNode = new LinkedList<>(30);
-		LinkedList<Integer> thirdNode = new LinkedList<>(70);
+		LinkedList firstNode = new LinkedList(56);
+		LinkedList secondNode = new LinkedList(30);
+		LinkedList thirdNode = new LinkedList(70);
 
-		List_HeadNTail<Integer> Obj1 = new List_HeadNTail<Integer>();
+		List_HeadNTail Obj1 = new List_HeadNTail();
 		Obj1.add(firstNode);
 		Obj1.append(secondNode);
 		Obj1.append(thirdNode);
-
-		System.out.println(firstNode);
-		
-		boolean result = Obj1.head.equals(firstNode) && Obj1.head.getNext().equals(secondNode)
-				&& Obj1.tail.equals(thirdNode);
-		Assert.assertTrue(result);
-
-
-	}
-	
-	@Test
-	public void Given3Numbers_InLinkedList_AddedInBetween() {
-		LinkedList<Integer> firstNode = new LinkedList<>(56);
-		LinkedList<Integer> secondNode = new LinkedList<>(30);
-		LinkedList<Integer> thirdNode = new LinkedList<>(70);
-
-		List_HeadNTail<Integer> Obj1 = new List_HeadNTail<Integer>();
-		Obj1.add(firstNode);
-		Obj1.append(thirdNode);
-		Obj1.insertAfter(firstNode,secondNode);
 
 	//	System.out.println(firstNode);
 		
@@ -81,23 +61,82 @@ public class TestingLinkedList<E> {
 	}
 	
 	@Test
-	public void pop() {
-		LinkedList<Integer> firstNode = new LinkedList<>(56);
-		LinkedList<Integer> secondNode = new LinkedList<>(30);
-		LinkedList<Integer> thirdNode = new LinkedList<>(70);
+	public void Given3Numbers_InLinkedList_AddedInBetween() {
+		LinkedList firstNode = new LinkedList(56);
+		LinkedList secondNode = new LinkedList(30);
+		LinkedList thirdNode = new LinkedList(70);
 
-		List_HeadNTail<Integer> Obj1 = new List_HeadNTail<Integer>();
+		List_HeadNTail Obj1 = new List_HeadNTail();
+		Obj1.add(firstNode);
+		Obj1.append(thirdNode);
+		Obj1.insertAfter(firstNode,secondNode);
+
+		
+		
+		boolean result = Obj1.head.equals(firstNode) && Obj1.head.getNext().equals(secondNode)
+				&& Obj1.tail.equals(thirdNode);
+		Assert.assertTrue(result);
+
+
+	}
+	
+	@Test
+	public void pop() {
+		LinkedList firstNode = new LinkedList(56);
+		LinkedList secondNode = new LinkedList(30);
+		LinkedList thirdNode = new LinkedList(70);
+
+		List_HeadNTail Obj1 = new List_HeadNTail();
 		Obj1.add(firstNode);
 		Obj1.append(secondNode);
 		Obj1.append(thirdNode);
-	     LinkedList<E> deletedElement =(LinkedList<E>) Obj1.pop();
+	     LinkedList deletedElement = Obj1.pop();
 
-		System.out.println("Deleted Element is " + deletedElement);
+	//	System.out.println("Deleted Element is " + deletedElement +" is successfully deleted");
 		
 		boolean result = Obj1.head.equals(secondNode) && Obj1.tail.equals(thirdNode);
 		Assert.assertTrue(result);
 
 
 	}
+	
+	@Test
+	public void lastPop() {
+		LinkedList firstNode = new LinkedList(56);
+		LinkedList secondNode = new LinkedList(30);
+		LinkedList thirdNode = new LinkedList(70);
+
+		List_HeadNTail Obj1 = new List_HeadNTail();
+		Obj1.add(firstNode);
+		Obj1.append(secondNode);
+		Obj1.append(thirdNode);
+	     LinkedList deletedElement =Obj1.lastPop();
+
+	//	System.out.println("Deleted Element is " + deletedElement +"  & successfully deleted");
+		
+		boolean result = Obj1.head.equals(firstNode) && Obj1.tail.equals(secondNode);
+		Assert.assertTrue(result);
+
+
+	}
+	
+	
+	@Test
+	public void SearchElement() {
+		LinkedList firstNode = new LinkedList(56);
+		LinkedList secondNode = new LinkedList(30);
+		LinkedList thirdNode = new LinkedList(70);
+
+		List_HeadNTail Obj1 = new List_HeadNTail();
+		Obj1.add(firstNode);
+		Obj1.append(secondNode);
+		Obj1.append(thirdNode);
+	     boolean result = Obj1.search(thirdNode);
+
+		Assert.assertTrue(result);
+
+
+	}
+
 
 }
