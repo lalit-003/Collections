@@ -59,11 +59,23 @@ public class List_HeadNTail<E> {
 
 		}
 	}
+	
+	//delete first element/node and deleted element
+	public LinkedList<E>  pop() {
+		// TODO Auto-generated method stub
+
+		LinkedList<E> tempNode = this.head;
+		this.head = head.getNext();
+		return tempNode;
+
+		}
+	}
+
 
 
 	
 	
 
 
-}
+
 //
