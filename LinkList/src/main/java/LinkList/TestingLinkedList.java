@@ -39,4 +39,24 @@ public class TestingLinkedList {
 
 
 	}
+	
+	@Test
+	public void Given3Numbers_InLinkedList_AddedTail() {
+		LinkedList<Integer> firstNode = new LinkedList<>(56);
+		LinkedList<Integer> secondNode = new LinkedList<>(30);
+		LinkedList<Integer> thirdNode = new LinkedList<>(70);
+
+		List_HeadNTail<Integer> Obj1 = new List_HeadNTail<Integer>();
+		Obj1.add(firstNode);
+		Obj1.append(secondNode);
+		Obj1.append(thirdNode);
+
+		System.out.println(firstNode);
+		
+		boolean result = Obj1.head.equals(firstNode) && Obj1.head.getNext().equals(secondNode)
+				&& Obj1.tail.equals(thirdNode);
+		Assert.assertTrue(result);
+
+
+	}
 }

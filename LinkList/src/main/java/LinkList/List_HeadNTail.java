@@ -25,6 +25,22 @@ public class List_HeadNTail<E> {
 		}
 
 	}
+	public void append(LinkedList<E> newNode) {
+		// TODO Auto-generated method stub
+
+		if (tail == null) {
+			this.tail = newNode;
+		}
+		if (head == null) {
+			this.head = newNode;
+		} else {
+			this.tail.setNext(newNode);
+			this.tail = newNode;
+
+		}
+
+	}
+
 
 }
 //
